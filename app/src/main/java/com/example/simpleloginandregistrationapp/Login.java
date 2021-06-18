@@ -38,6 +38,9 @@ public class Login extends AppCompatActivity {
             Boolean checklogin = databaseHelper.CheckLogin(username, password);
             if(checklogin){
                 Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(Login.this, HomeActivity.class);
+                startActivity(intent);
             }else{
                 Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
             }
